@@ -1,0 +1,6 @@
+Flask
+pyttsx3
+requests
+wikipedia
+python-dotenv
+google-generativeai
