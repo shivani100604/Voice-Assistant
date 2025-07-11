@@ -1,4 +1,4 @@
-# 🤖 LG Voice Guard
+# LG Voice Guard
 
 **LG Voice Guard** is an intelligent voice assistant built using Python and Flask. It can answer general knowledge questions, fetch weather updates, get news, respond to smart commands, and interact through speech and a web-based chat interface. All answers are spoken aloud and displayed in a beautiful chat UI.
 
@@ -6,7 +6,7 @@
 
 ---
 
-## 🌟 Features
+## Features
 
 - 🎙️ Voice input via microphone
 - 💬 Chat-style text interface
@@ -19,7 +19,7 @@
 
 ---
 
-## 📁 Folder Structure
+## Folder Structure
 
 ```
 voice-assistant/
@@ -46,7 +46,7 @@ voice-assistant/
 
 ---
 
-## 🧰 Requirements
+##  Requirements
 
 Install Python libraries:
 
@@ -56,7 +56,7 @@ pip install flask pyttsx3 requests wikipedia google-generativeai python-dotenv
 
 ---
 
-## ▶️ How to Run
+## How to Run
 
 1. Clone the repository or download it as ZIP and extract.
 2. Make sure all files are in place.
@@ -78,11 +78,9 @@ http://127.0.0.1:5000
 
 ---
 
-## 🖼️ Screenshot
+##  Screenshot
 
 ![Chat UI](static/image.png)
-
----
 
 ## 🙋 How it Works
 
