@@ -2,11 +2,9 @@ import os
 import requests
 from dotenv import load_dotenv
 
-# Load environment variables (only needed locally, not in Render)
 load_dotenv()
 
-# Get API key from environment
-NEWS_API_KEY = os.getenv("NEWS_API_KEY") or os.getenv("NEWSDATA_API_KEY")
+NEWS_API_KEY = os.getenv("NEWS_API_KEY")
 
 def get_latest_news(country="in", category="top"):
     if not NEWS_API_KEY:
@@ -22,16 +20,14 @@ def get_latest_news(country="in", category="top"):
 
     try:
         response = requests.get(url, params=params, timeout=8)
-        if response.status_code != 200:
-            return "📰 Couldn't fetch the news. Try again later."
-
         data = response.json()
-        articles = data.get("results", [])
+        print("DEBUG:", data)  # 👈 See what’s wrong here
 
-        if not articles:
+        if response.status_code != 200 or not data.get("results"):
             return "📰 No news found."
 
-        headlines = [f"• {article.get('title', 'No title')}" for article in articles[:3]]
+        articles = data["results"][:3]
+        headlines = [f"• {article['title']}" for article in articles]
         return "📰 News:\n" + "\n".join(headlines)
 
     except Exception as e:
