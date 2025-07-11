@@ -1,98 +1,124 @@
 # LG Voice Guard
 
-**LG Voice Guard** is an intelligent voice assistant built using Python and Flask. It can answer general knowledge questions, fetch weather updates, get news, respond to smart commands, and interact through speech and a web-based chat interface. All answers are spoken aloud and displayed in a beautiful chat UI.
-
-![Logo](static/logo.png)
+A smart and beautiful voice assistant web app built with **Flask, JavaScript, and Gemini AI**. It can answer general questions, tell the weather, provide news, control devices (mocked), and interact via voice in a chatbox-style UI.
 
 ---
 
-## Features
+## ✨ Features
 
-- 🎙️ Voice input via microphone
-- 💬 Chat-style text interface
-- 🌦️ Get real-time weather updates
-- 📰 Read latest news headlines
-- 📚 Answer general knowledge questions (uses Google Gemini & Wikipedia)
-- 💡 Respond to smart phrases like "turn on light", "off the fan"
-- 📢 Speaks responses using text-to-speech
-- 💻 Works in browser using Flask web app
+* Ask general knowledge questions
+* Weather updates by city
+* Latest news headlines
+* Smart chatbox UI with speech recognition
+* Responds via text and voice (text-to-speech)
+* Gemini + Wikipedia fallback for accurate answers
 
 ---
 
-## Folder Structure
+## 🚀 Live Demo
+
+You can deploy it for free using **Render** or run it locally.
+
+---
+
+## 🎓 Technologies Used
+
+* Python + Flask
+* HTML + CSS + JS
+* Google Gemini API (Free tier)
+* OpenWeather API (for weather)
+* NewsData API (for news)
+* Speech Recognition (JS)
+* pyttsx3 (TTS)
+
+---
+
+## 📁 Folder Structure
 
 ```
 voice-assistant/
-├── app.py                  # Flask app
-├── assistant.py            # Main assistant logic
-├── speak.py                # Text-to-speech script
+├── app.py
+├── assistant.py
 ├── modules/
-│   ├── general_qa.py       # Handles general questions
-│   ├── weather.py          # Weather info using OpenWeatherMap
-│   ├── news.py             # News headlines using NewsAPI
-│   └── facts.py            # Fun facts
-├── templates/
-│   └── index.html          # Main webpage UI
+│   ├── weather.py
+│   ├── news.py
+│   ├── general.py
+│   └── speak.py
 ├── static/
-│   ├── css/
-│   │   └── style.css       # Styling
-│   ├── js/
-│   │   └── script.js       # Speech recognition + chatbot logic
-│   ├── logo.png            # Logo for the project
-│   └── image.png           # Chatbox UI screenshot
-├── requirements.txt        # Python libraries
-└── README.md               # This file
+│   ├── css/style.css
+│   ├── js/script.js
+│   └── image.png
+├── templates/
+│   └── index.html
+├── .env
+├── requirements.txt
+└── README.md
 ```
 
 ---
 
-##  Requirements
+## 📦 Installation
 
-Install Python libraries:
+### Step 1: Clone the repo
 
 ```bash
-pip install flask pyttsx3 requests wikipedia google-generativeai python-dotenv
+git clone https://github.com/yourusername/voice-assistant
+cd voice-assistant
 ```
 
----
+### Step 2: Install dependencies
 
-## How to Run
+```bash
+pip install -r requirements.txt
+```
 
-1. Clone the repository or download it as ZIP and extract.
-2. Make sure all files are in place.
-3. Create a `.env` file in root directory and add:
-   ```
-   GEMINI_API_KEY=your_google_gemini_api_key
-   ```
-4. Run the app:
+### Step 3: Add `.env` file
+
+Create a `.env` file in the root folder and add:
+
+```
+GEMINI_API_KEY=your_gemini_key_here
+WEATHER_API_KEY=your_openweather_key_here
+NEWS_API_KEY=your_newsdata_key_here
+```
+
+### Step 4: Run the App
 
 ```bash
 python app.py
 ```
 
-5. Open browser and go to:
-
-```
-http://127.0.0.1:5000
-```
+Visit [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
 
 ---
 
-##  Screenshot
+## 🌐 Deploy on Render
 
-![Chat UI](static/image.png)
+1. Push project to GitHub
+2. Go to [https://render.com](https://render.com)
+3. Create new Web Service
+4. Connect your GitHub repo
+5. Set:
 
-## 🙋 How it Works
+   * **Build Command**: `pip install -r requirements.txt`
+   * **Start Command**: `python app.py`
+6. Add Environment Variables:
 
-- Press the 🎙️ mic button to speak
-- Assistant listens and shows your message
-- Answers using Gemini API or Wikipedia
-- Responds with voice and text
+   * `GEMINI_API_KEY`
+   * `WEATHER_API_KEY`
+   * `NEWS_API_KEY`
+7. Deploy and open your URL
 
 ---
 
-## 👩‍💻 Author
+## 👥 Author
 
-**Shivani Gangwar**  
-Email: sgangwar592@gmail.com  
+**Shivani**
+Email: [sgangwar592@gmail.com](mailto:sgangwar592@gmail.com)
 GitHub: [shivani100604](https://github.com/shivani100604)
+
+---
+
+## 🗓️ License
+
+This project is free to use and modify.
