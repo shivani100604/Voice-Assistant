@@ -15,12 +15,12 @@ def process_query(query):
     # Time
     elif "time" in query:
         now = datetime.datetime.now()
-        response = f"⏰ The current time is {now.strftime('%I:%M %p')}."
+        response = f"The current time is {now.strftime('%I:%M %p')}."
 
     # Date
     elif "date" in query:
         today = datetime.date.today()
-        response = f"📅 Today's date is {today.strftime('%B %d, %Y')}."
+        response = f"Today's date is {today.strftime('%B %d, %Y')}."
 
     # Weather
     elif "weather" in query:
@@ -32,7 +32,7 @@ def process_query(query):
 
     # Facts
     elif "fact" in query or "tell me a fact" in query:
-        response = "🧠 Did you know? Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3000 years old and still edible!"
+        response = "Did you know? Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3000 years old and still edible!"
 
     # Fallback to General QnA
     else:
