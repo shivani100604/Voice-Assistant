@@ -1,9 +1,7 @@
 import os
 import requests
-from dotenv import load_dotenv
 
-load_dotenv()
-NEWS_API_KEY = os.getenv("NEWSDATA_API_KEY")
+NEWS_API_KEY = os.getenv("NEWSDATA_API_KEY")  # Use this exact name in Render
 
 def get_latest_news(country="in", category="top"):
     if not NEWS_API_KEY:
@@ -24,7 +22,7 @@ def get_latest_news(country="in", category="top"):
         if response.status_code != 200 or not data.get("results"):
             return "📰 No news found."
 
-        articles = data["results"][:3]  # limit to 3 top headlines
+        articles = data["results"][:3]
         headlines = [f"• {article['title']}" for article in articles]
         return "📰 News:\n" + "\n".join(headlines)
 
