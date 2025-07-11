@@ -1,5 +1,4 @@
 import datetime
-import os
 from modules.general_qa import answer_general_question
 from modules.weather import get_weather
 from modules.news import get_latest_news
