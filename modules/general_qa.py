@@ -19,7 +19,7 @@ def answer_general_question(query):
         if gemini_answer.lower().startswith("sorry") or "couldn't answer" in gemini_answer.lower():
             raise ValueError("Weak Gemini response")
 
-        return f"🧠 {gemini_answer}"
+        return f"{gemini_answer}"
 
     except Exception as e:
         print("⚠️ Gemini failed:", e)
@@ -27,11 +27,11 @@ def answer_general_question(query):
     # Try Wikipedia 
     try:
         summary = wikipedia.summary(query, sentences=2)
-        return f"📚 {summary}"
+        return f"{summary}"
     except wikipedia.exceptions.DisambiguationError as e:
         try:
             summary = wikipedia.summary(e.options[0], sentences=2)
-            return f"📚 {summary}"
+            return f"{summary}"
         except:
             pass
     except:
