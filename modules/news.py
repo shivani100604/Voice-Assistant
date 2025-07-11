@@ -3,7 +3,6 @@ import requests
 from dotenv import load_dotenv
 
 load_dotenv()
-
 NEWS_API_KEY = os.getenv("NEWS_API_KEY")
 
 def get_latest_news(country="in", category="top"):
@@ -19,14 +18,13 @@ def get_latest_news(country="in", category="top"):
     }
 
     try:
-        response = requests.get(url, params=params, timeout=8)
+        response = requests.get(url, params=params, timeout=5)
         data = response.json()
-        print("DEBUG:", data)  # 👈 See what’s wrong here
 
         if response.status_code != 200 or not data.get("results"):
             return "📰 No news found."
 
-        articles = data["results"][:3]
+        articles = data["results"][:3]  # limit to 3 top headlines
         headlines = [f"• {article['title']}" for article in articles]
         return "📰 News:\n" + "\n".join(headlines)
 
