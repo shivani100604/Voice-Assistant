@@ -1,4 +1,3 @@
-// Add a message to the chatbox
 function addMessage(sender, message) {
     const chatbox = document.getElementById("chatbox");
     const msgDiv = document.createElement("div");
@@ -8,7 +7,6 @@ function addMessage(sender, message) {
     chatbox.scrollTop = chatbox.scrollHeight;
 }
 
-// Send message to backend
 function sendMessage() {
     const input = document.getElementById("userInput");
     const userMessage = input.value.trim();
@@ -37,7 +35,6 @@ function speakText(text) {
     window.speechSynthesis.speak(speech);
 }
 
-// Speech-to-Text (Mic input)
 function startListening() {
     if (!('webkitSpeechRecognition' in window)) {
         alert("Your browser does not support voice recognition!");
@@ -59,7 +56,6 @@ function startListening() {
     };
 }
 
-// Event listeners
 document.getElementById("sendBtn").addEventListener("click", sendMessage);
 document.getElementById("micBtn").addEventListener("click", startListening);
 document.getElementById("userInput").addEventListener("keypress", function (e) {
