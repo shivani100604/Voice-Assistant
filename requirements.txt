@@ -2,3 +2,4 @@ Flask
 requests
 wikipedia
 python-dotenv
+google-generativeai
