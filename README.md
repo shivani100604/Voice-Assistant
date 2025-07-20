@@ -9,25 +9,7 @@ A Flask-based **Voice Assistant** that can answer questions, fetch weather updat
 - Fun facts feature.
 - Voice input (using browser mic).
 - Interactive chat UI with a send button and mic button.
-- Free AI fallback to Wikipedia answers.
-
-## Project Structure
-voice-assistant/
-├── app.py               
-├── assistant.py          
-├── modules/             
-│   ├── general_qa.py
-│   ├── news.py
-│   ├── weather.py
-│   └── facts.py
-├── static/               
-│   ├── style.css
-│   ├── script.js
-│   └── logo.png
-├── templates/
-│   └── index.html        
-├── requirements.txt     
-└── README.md             
+- Free AI fallback to Wikipedia answers.           
 
 ## Installation and Setup
 1. Clone the Repository
