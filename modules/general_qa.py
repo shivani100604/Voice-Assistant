@@ -2,7 +2,6 @@ import os
 import wikipedia
 import google.generativeai as genai
 
-# Google Gemini API Key (free)
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 if GEMINI_API_KEY:
@@ -10,7 +9,6 @@ if GEMINI_API_KEY:
 
 
 def answer_general_question(query):
-    # First try Google Gemini
     if GEMINI_API_KEY:
         try:
             model = genai.GenerativeModel("gemini-1.5-flash")
@@ -21,7 +19,6 @@ def answer_general_question(query):
         except Exception as e:
             print("Gemini error:", e)
 
-    # Fallback: Wikipedia
     try:
         summary = wikipedia.summary(query, sentences=2)
         return f"{summary}"
