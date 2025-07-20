@@ -20,9 +20,9 @@ A Flask-based **Voice Assistant** that can answer questions, fetch weather updat
    pip install -r requirements.txt
 
 3. Add API keys in .env file
-   WEATHER_API_KEY=your_openweather_api_key
-   NEWSDATA_API_KEY=your_newsdata_api_key
-   GEMINI_API_KEY=your_gemini_api_key
+  - WEATHER_API_KEY=your_openweather_api_key
+  - NEWSDATA_API_KEY=your_newsdata_api_key
+  - GEMINI_API_KEY=your_gemini_api_key
 
 5. Run the app
    python app.py
